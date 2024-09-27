@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/logo.png";
+import { Button } from "./ui/button";
+---
+
+<!-- Header Component -->
+<header class="sticky top-2 left-0 right-0 z-50">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <!-- Logo -->
+    <div>
+      <Image src={logo} alt="logo" class="h-16 w-[148px] object-cover" />
+    </div>
+
+    <!-- Hamburger Icon for mobile -->
+    <div class="lg:hidden">
+      <button
+        id="menu-button"
+        type="button"
+        class="text-white focus:outline-none"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul
+      id="menu"
+      class="hidden lg:flex py-10 lg:py-1 flex-col lg:flex-row items-center gap-6 lg:gap-x-12 absolute lg:static top-20 left-0 w-full lg:w-auto bg-white lg:bg-transparent z-40 lg:z-auto shadow-lg lg:shadow-none"
+    >
+      <li>
+        <a
+          href="/"
+          class="text-lg text-black lg:text-white font-bold font-jakarta transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="text-lg text-black lg:text-white font-normal font-jakarta transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href="#services"
+          class="text-lg text-black lg:text-white font-normal font-jakarta transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a
+          href="#technologies"
+          class="text-lg text-black lg:text-white font-normal font-jakarta transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline"
+          >Technologies</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="text-lg text-black lg:text-white font-normal font-jakarta px-4 py-2 lg:p-0 block lg:inline"
+          >Contact</a
+        >
+      </li>
+    </ul>
+
+    <!-- Contact Button (Hidden on mobile) -->
+    <div class="hidden lg:block">
+      <Button
+        variant={"secondary"}
+        size={"lg"}
+        className="px-6 py-2 rounded-full "
+      >
+        Contact Us
+      </Button>
+    </div>
+  </div>
+</header>
+
+<!-- Add JavaScript below for toggling menu -->
+<script>
+  const menuButton = document.getElementById("menu-button");
+  const menu = document.getElementById("menu");
+
+  menuButton.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
