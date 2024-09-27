@@ -5,6 +5,7 @@ export default {
   theme: {
     container: {
       center: true,
+      padding: "1.5rem",
     },
     extend: {
       borderRadius: {
@@ -28,7 +29,7 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#D92B2C",
           foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {

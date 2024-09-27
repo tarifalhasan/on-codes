@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="min-h-[calc(100vh-90px)] py-10 relative">
+  <div
+    class="container flex flex-col lg:min-h-[calc(100vh-90px)] h-full lg:flex-row items-center"
+  >
+    <div class="hidden lg:block lg:basis-[50%]"></div>
+    <div class="basis-full lg:basis-[50%] space-y-8">
+      <div>
+        <h1
+          class="text-[3rem] font-semibold font-jakarta leading-[110%] xl:text-[4.5rem]"
+        >
+          Your Software <br />
+          Development <br />
+          <span class="text-secondary">Partner.</span>
+        </h1>
+      </div>
+      <p class="text-[#A1A3C5] font-normal leading-[150%] max-w-[477px]">
+        Hire our team of passionate software developers for short-term,
+        recurring, and full-time work.
+      </p>
+      <div
+        class="w-[104px] rounded-full cursor-pointer h-[104px] bg-secondary grid place-items-center"
+      >
+        <p class="text-base font-bold font-jakarta">Let’s Talk</p>
+      </div>
+    </div>
+  </div>
+  <Image
+    src={"/images/hero.png"}
+    alt={"hero image"}
+    width={600}
+    height={1000}
+    class={"lg:absolute -z-10 xl:max-w-[450px] 2xl:max-w-[550px]  lg:max-w-[380px] left-0 top-0"}
+  />
+</div>
