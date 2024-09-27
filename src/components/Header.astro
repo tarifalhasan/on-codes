@@ -95,7 +95,9 @@ import { Button } from "./ui/button";
   const menuButton = document.getElementById("menu-button");
   const menu = document.getElementById("menu");
 
-  menuButton.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
+  if (menuButton && menu) {
+    menuButton.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
 </script>
