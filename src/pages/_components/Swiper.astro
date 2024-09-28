@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import about1 from "../../../public/images/about-1.png";
+---
+
+<>
+  <main>
+    <div class="swiper-body">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide bg-black">
+            <div class="grid w-full lg:grid-cols-2 gap-10">
+              <div class="flex lg:max-w-[518px] flex-col gap-y-4">
+                <div>
+                  <div
+                    style="box-shadow: 3.74px 3.74px 0px 0px #36425B;"
+                    class="w-[56px] text-[#0E0F10] text-lg font-bold flex justify-center items-center h-[46px] bg-white rounded-full border border-[#2D3340]"
+                  >
+                    01
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white">Our Story</h3>
+                </div>
+                <div>
+                  <p
+                    class="text-[#A1A3C5] text-left text-base lg:text-lg leading-[166%] font-inter"
+                  >
+                    Founded in 2020, On Codes has grown from a small team of
+                    passionate developers into a promising software development
+                    firm. Our journey has been marked by continuous improvement,
+                    innovation, and a relentless pursuit of excellence. Despite
+                    being a small team, we believe in creating solutions that
+                    not only meet the immediate needs of our clients but also
+                    anticipate future challenges and opportunities.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="relative h-[180px] lg:h-[302px] rounded-[24px] after:top-4 after:-left-4 after:rounded-[24px] after:absolute after:w-full w-full after:h-full after:bg-[#2D3340]"
+              >
+                <Image
+                  class={"absolute object-cover rounded-[24px]   z-30 inset-0 w-full h-full"}
+                  src={about1}
+                  alt={"about"}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </main>
+</>
+
+<style>
+  .swiper-body {
+    position: relative;
+    height: 600px;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main {
+    margin: auto;
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+</style>
+
+<script src="../../js/slider_simple.js"></script>

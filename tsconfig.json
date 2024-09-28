@@ -4,11 +4,10 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "skipLibCheck": true, // Skips type checking of declaration files
 
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }

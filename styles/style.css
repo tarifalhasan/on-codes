@@ -19,3 +19,19 @@ html {
 
   border-radius: 100px;
 }
+
+.swiper-slide {
+  font-size: 18px;
+  background: #080f1d;
+}
+.swiper-slide[data-astro-cid-szgblbir] {
+  background: #080f1d !important;
+  text-align: left !important;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
