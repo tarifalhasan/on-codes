@@ -1,0 +1,109 @@
+---
+import { Button } from "@/components/ui/button";
+import { Image } from "astro:assets";
+import c from "../../../public/images/contact.webp";
+import reg from "../../../public/images/right-reg.png";
+---
+
+<section id="contact" class="py-10 relative overflow-hidden xl:py-20 2xl:py-28">
+  <div
+    class="container relative bg-[#0D1525] rounded-[27px] items-center grid lg:grid-cols-2"
+  >
+    <div class="sm:px-6 max-w-[493px] py-12 flex flex-col gap-y-4">
+      <div>
+        <span
+          class="text-sm lg:text-base text-skin-red font-semibold uppercase"
+        >
+          CONTACT US
+        </span>
+      </div>
+      <div>
+        <h3 class="text-xl xl:text-2xl font-bold capitalize">
+          Ready to turn your ideas into reality?
+        </h3>
+      </div>
+      <div>
+        <p class="text-sm xl:text-lg font-normal text-white leading-[170%]">
+          Contact us today to discuss your project and learn how we can help you
+          achieve your business goals.
+        </p>
+      </div>
+      <form action="" class="flex flex-col gap-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="bg-white text-[#0D1525] placeholder:text-[#0D1525] placeholder:text-sm rounded-full text-sm font-normal px-3 py-3"
+            name="fullname"
+            id="fullname"
+          />
+          <input
+            type="email"
+            placeholder="E-Mail Address *"
+            class="bg-white text-[#0D1525] placeholder:text-[#0D1525] placeholder:text-sm rounded-full text-sm font-normal px-3 py-3"
+            name="email"
+            id="email"
+          />
+        </div>
+        <div class="grid grid-cols-2 gap-5">
+          <input
+            type="text"
+            placeholder="Phone"
+            class="bg-white text-[#0D1525] placeholder:text-[#0D1525] placeholder:text-sm rounded-full text-sm font-normal px-3 py-3"
+            name="phone"
+            id="phone"
+          />
+          <input
+            type="text"
+            placeholder="Country"
+            class="bg-white text-[#0D1525] placeholder:text-[#0D1525] placeholder:text-sm rounded-full text-sm font-normal px-3 py-3"
+            name="country"
+            id="country"
+          />
+        </div>
+        <textarea
+          placeholder="Tell about your project..."
+          class="bg-white text-[#0D1525] placeholder:text-[#0D1525] placeholder:text-sm rounded-[14.944px] text-sm font-normal px-3 py-3"
+          name="country"
+          rows="5"
+          id="country"></textarea>
+        <div>
+          <Button
+            variant={"secondary"}
+            size={"lg"}
+            className="gap-2 rounded-full"
+          >
+            <span>Send Message</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="19"
+              viewBox="0 0 21 19"
+              fill="none"
+            >
+              <path
+                d="M20.5982 1.12567C20.3594 0.928974 20.0313 0.877211 19.7406 0.995231L1.27118 8.49048C1.26702 8.49255 1.26287 8.49463 1.25872 8.4967C0.747927 8.72652 0.440622 9.22966 0.471767 9.78041C0.471767 9.78248 0.471767 9.78455 0.471767 9.78455C0.507066 10.3395 0.87251 10.7991 1.40614 10.9585L8.39734 13.0663L8.65065 17.7871V17.7892C8.67142 18.1287 8.89359 18.4186 9.21751 18.5325C9.30472 18.5656 9.39815 18.5822 9.49782 18.5822C9.74284 18.5822 9.96708 18.4828 10.1311 18.3006L12.4774 15.7104L15.8433 18.0335C16.0654 18.1888 16.3229 18.2695 16.5928 18.2695C17.2095 18.2695 17.7535 17.8285 17.8823 17.2218C17.8823 17.2198 17.8823 17.2177 17.8843 17.2156L20.891 1.94145C20.9491 1.63916 20.8349 1.3203 20.5982 1.12567ZM18.6651 4.48197L16.3333 16.3212L10.5381 12.3209L18.6651 4.48197ZM11.0738 14.7393L10.2266 15.6731L10.1436 14.0974L11.0738 14.7393ZM16.6572 4.06787L8.97872 11.4762L2.91152 9.6479L16.6572 4.06787Z"
+                fill="white"></path>
+            </svg>
+          </Button>
+        </div>
+      </form>
+    </div>
+    <div class="hidden lg:block">
+      <Image
+        class={"w-full h-full"}
+        src={c}
+        alt={"contact"}
+        quality={"max"}
+        format="webp"
+      />
+    </div>
+    <div>
+      <Image
+        class={"absolute left-0 top-0 max-w-[40%]"}
+        src={reg}
+        alt={"regtengul"}
+      />
+    </div>
+  </div>
+</section>
