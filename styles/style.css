@@ -35,3 +35,8 @@ html {
   height: 100%;
   object-fit: cover;
 }
+
+.swiper-body[data-astro-cid-szgblbir] {
+  position: relative;
+  height: 1000px;
+}
