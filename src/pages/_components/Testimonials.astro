@@ -4,7 +4,6 @@ import "../../../styles/embla.css";
 import { initEmbla } from "@/js/initEmbla";
 import { Button } from "@/components/ui/button";
 
-// Array of dynamic carousel items
 const carouselItems = [
   {
     imgSrc: "/images/Talita Meira.png",
@@ -32,11 +31,10 @@ const carouselItems = [
   },
 ];
 
-// This will ensure the carousel is initialized on the client-side
 export const hydrate = "client:load";
 ---
 
-<section>
+<section class="pb-20">
   <div class="container py-10 xl:py-20 2xl:py-24">
     <div class="flex flex-col items-center gap-y-4">
       <div

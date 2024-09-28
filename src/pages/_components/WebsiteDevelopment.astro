@@ -1,0 +1,141 @@
+---
+import people from "@/../public/images/people.svg";
+import { Button } from "@/components/ui/button";
+import { Image } from "astro:assets";
+const SERVICES_DATA = [
+  {
+    title: "Custom Web Design",
+    des: "Creating visually appealing and user-friendly designs that reflect      your brand.",
+
+    id: 401,
+    icon: "/icons/icon7.svg",
+  },
+  {
+    title: "Responsive Development",
+    des: "Ensuring your website looks great and works well on all devices.",
+    icon: "/icons/icon8.svg",
+    id: 402,
+  },
+  {
+    title: "E-commerce Solutions",
+    des: "Building robust e-commerce platforms that drive sales and enhance customer experience.",
+    icon: "/icons/icon9.svg",
+    id: 409,
+  },
+  {
+    title: "Content Management Systems",
+    des: "Implementing CMS solutions that make it easy to manage your website content.",
+    icon: "/icons/icon10.svg",
+    id: 408,
+  },
+  {
+    title: "Performance Optimization",
+    des: "Ensuring fast loading times and smooth user experience.",
+    icon: "/icons/icon11.svg",
+    id: 406,
+  },
+  {
+    title: "Security",
+    des: "Implementing security measures to protect your website and data.",
+    icon: "/icons/icon12.svg",
+    id: 407,
+  },
+];
+---
+
+<section class="bg-[#080F1D] pb-10 xl:pb-20 2xl:pb-24">
+  <div class="container pt-10 xl:pt-20 2xl:pt-24">
+    <div class="flex flex-col items-center gap-y-5">
+      <div class="max-w-[776px] lg:px-4 mx-auto">
+        <h2 class="oncode_title leading-[120%] lg:leading-[110%]">
+          Website Development
+        </h2>
+      </div>
+      <div class="max-w-[886px] mx-auto">
+        <p class="t oncode_des font-inter text-center">
+          Our expert web design and development team works across leading web
+          technologies to bring your digital vision to life. We provide total
+          transparency on project status, priorities, and development progress –
+          collaborating with you every step of the way.
+        </p>
+      </div>
+      <div class="flex pt-4 justify-center items-center gap-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="30"
+          viewBox="0 0 26 30"
+          fill="none"
+        >
+          <path
+            d="M26 30L0 18.253V11.747L26 0V6.98795L5.23529 16.2651V13.7952L26 23.0121V30Z"
+            fill="#D92B2C"></path>
+        </svg>
+        <div>
+          <h4
+            class="text-xl xl:text-2xl font-jakarta font-semibold tracking-tighter"
+          >
+            Our process includes
+          </h4>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="30"
+          viewBox="0 0 26 30"
+          fill="none"
+        >
+          <path
+            d="M7.15334e-07 -3.65644e-07L26 11.747L26 18.253L-1.90735e-06 30L-1.29644e-06 23.012L20.7647 13.7349L20.7647 16.2048L1.04429e-07 6.98795L7.15334e-07 -3.65644e-07Z"
+            fill="#D92B2C"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="container grid pt-10 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {
+      SERVICES_DATA.map((item) => (
+        <div class="bg-[#0D1525] rounded-[11.5px] py-10 px-[38px] flex flex-col gap-y-6">
+          <div class="w-[46px] grid place-items-center h-[46px] rounded-full bg-[#A1AEC8]">
+            <Image src={item.icon} alt={item.title} width={28} height={28} />
+          </div>
+          <div class="space-y-3">
+            <h2 class="text-xl font-semibold">{item.title}</h2>
+            <h5 class="oncode_des">{item.des}</h5>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="pt-10 container flex flex-col gap-y-5 lg:gap-y-10 items-center">
+    <div
+      class="sm:w-[310.933px] relative after:w-full after:h-full after:absolute after:bg-red-600 after:rounded-full rounded-full after:top-2 after:left-1 after:z-10 z-20 w-[240px] h-[80px] sm:h-[101px]"
+    >
+      <Image src={people} class={"absolute z-20"} alt={"people"} />
+    </div>
+    <div class="max-w-[885px] mx-auto">
+      <h4 class="text-sm xl:text-xl font-medium font-jakarta text-center">
+        Despite being a <span class="italic">small team</span>, we take pride in
+        our ability to deliver personalized and high-quality services tailored
+        to each client's specific needs.
+      </h4>
+    </div>
+    <Button
+      variant={"secondary"}
+      size={"lg"}
+      className="gap-2 px-12 rounded-full"
+    >
+      Learn More <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <path
+          d="M1.11612 13.2939C0.627961 13.782 0.627961 14.5735 1.11612 15.0616C1.60427 15.5498 2.39573 15.5498 2.88388 15.0616L1.11612 13.2939ZM15.25 2.17773C15.25 1.48738 14.6904 0.927734 14 0.927733L2.75 0.927734C2.05964 0.927734 1.5 1.48738 1.5 2.17773C1.5 2.86809 2.05964 3.42773 2.75 3.42773H12.75V13.4277C12.75 14.1181 13.3096 14.6777 14 14.6777C14.6904 14.6777 15.25 14.1181 15.25 13.4277L15.25 2.17773ZM2.88388 15.0616L14.8839 3.06162L13.1161 1.29385L1.11612 13.2939L2.88388 15.0616Z"
+          fill="white"></path>
+      </svg>
+    </Button>
+  </div>
+</section>
