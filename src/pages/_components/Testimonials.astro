@@ -1,0 +1,133 @@
+---
+import { Image } from "astro:assets";
+import "../../../styles/embla.css";
+import { initEmbla } from "@/js/initEmbla";
+
+// Array of dynamic carousel items
+const carouselItems = [
+  {
+    imgSrc: "/images/Talita Meira.png",
+    imgAlt: "Talita Meira",
+    testimonial:
+      "On Codes has been instrumental in the development of our platform. Their expertise and dedication have helped us create a seamless and user-friendly experience for our mentors and mentees. We are incredibly grateful for their support and look forward to continuing our partnership.",
+    name: "Talita Meira",
+    position: "CEO of Luksai",
+  },
+  {
+    imgSrc: "/images/Talita Meira.png",
+    imgAlt: "Talita Meira",
+    testimonial:
+      "Working with On Codes has been a game-changer for our logistics operations. Their tailored software solutions have streamlined our processes, increased efficiency, and provided us with the tools to better serve our clients. We highly recommend their services.",
+    name: "Talita Meira",
+    position: "CEO of Luksai",
+  },
+  {
+    imgSrc: "/images/Talita Meira.png",
+    imgAlt: "John Doe",
+    testimonial:
+      "On Codes has been a reliable and innovative partner in developing our software solutions. Their commitment to excellence and attention to detail have exceeded our expectations. They truly understand our needs and deliver outstanding results.",
+    name: "John Doe",
+    position: "Founder of TechCorp",
+  },
+];
+
+// This will ensure the carousel is initialized on the client-side
+export const hydrate = "client:load";
+---
+
+<section>
+  <div class="container py-10 xl:py-20 2xl:py-24">
+    <div class="flex flex-col items-center gap-y-4">
+      <div
+        class="px-5 py-3 flex items-center gap-2 rounded-full"
+        style="border: 1px solid rgba(255, 255, 255, 0.10);background: rgba(255, 255, 255, 0.05);"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="25"
+          viewBox="0 0 26 25"
+          fill="none"
+        >
+          <path
+            d="M18.8907 0.809021L20.3194 3.48792L22.9983 4.91666L20.3194 6.34541L18.8907 9.02431L17.4619 6.34541L14.783 4.91666L17.4619 3.48792L18.8907 0.809021ZM9.14064 4.19444L12.0295 9.6111L17.4462 12.5L12.0295 15.3889L9.14064 20.8056L6.25175 15.3889L0.835083 12.5L6.25175 9.6111L9.14064 4.19444ZM21.7795 17.1945L19.974 13.8091L18.1684 17.1945L14.783 19L18.1684 20.8056L19.974 24.191L21.7795 20.8056L25.1649 19L21.7795 17.1945Z"
+            fill="#D92B2C"></path>
+        </svg>
+        <p class="text-lg font-normal text-white">Testimonials</p>
+      </div>
+      <div class="max-w-[776px] lg:px-4 mx-auto">
+        <h2 class="oncode_title leading-[120%] lg:leading-[110%]">
+          What are our clients saying about On Codes
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="embla">
+    <div class="embla__viewport">
+      <div class="embla__container">
+        {
+          carouselItems.map((item) => (
+            <div class="embla__slide">
+              <div class="embla__slide__number min-h-[432px] relative p-4 flex flex-col gap-y-5 items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="54"
+                  class="absolute top-8 left-10"
+                  height="37"
+                  viewBox="0 0 54 37"
+                  fill="none"
+                >
+                  <path
+                    d="M15.2718 32.5957C14.8184 34.2183 13.6491 35.2682 11.764 35.7693C9.87892 36.2704 8.30402 36.5091 7.08705 36.5091C5.87008 36.5091 4.67698 36.3659 3.50773 36.1034C1.16924 35.483 0 34.2899 0 32.5957V4.05656C0 2.43394 1.93283 1.26469 5.82236 0.54883C7.70747 0.190898 9.66416 0 11.6447 0C13.6253 0 15.6058 0.190898 17.5864 0.54883C21.4521 1.26469 23.4088 2.43394 23.4088 4.05656C23.3849 4.05656 15.2718 32.5957 15.2718 32.5957ZM45.8392 32.5957C45.3858 34.2183 44.2165 35.2682 42.3314 35.7693C40.4463 36.2704 38.8714 36.5091 37.6544 36.5091C36.4375 36.5091 35.2444 36.3659 34.0751 36.1034C31.7366 35.483 30.5674 34.2899 30.5674 32.5957V4.05656C30.5674 2.43394 32.5002 1.26469 36.3898 0.54883C38.2749 0.190898 40.2316 0 42.2121 0C44.1927 0 46.1732 0.190898 48.1776 0.54883C52.0433 1.26469 54 2.43394 54 4.05656L45.8392 32.5957Z"
+                    fill="#1C273D"
+                  />
+                </svg>
+                <div class="flex justify-center">
+                  <div class="relative z-10 w-[82px] h-[82px] rounded-full after:content-[''] after:absolute after:w-[86px] after:h-[86px] after:bg-red-600 after:top-[2px] after:-z-10 after:-left-1 after:rounded-full">
+                    <Image
+                      class="rounded-full absolute inset-0 w-full"
+                      src={item.imgSrc}
+                      alt={item.imgAlt}
+                      width={82}
+                      height={82}
+                    />
+                  </div>
+                </div>
+                <p class="text-xs lg:text-lg text-white font-normal font-jakarta max-w-[780px] mx-auto text-center">
+                  {item.testimonial}
+                </p>
+                <div class="space-y-1">
+                  <div class="pt-6 border-t border-white">
+                    <h5 class="text-sm xl:text-xl font-bold text-white tracking-wider">
+                      {item.name}
+                    </h5>
+                  </div>
+                  <p class="text-center text-[#A1A3C5] text-xs lg:text-base font-jakarta font-medium">
+                    {item.position}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="embla__controls">
+      <div class="embla__buttons">
+        <button class="embla__button embla__button--prev" type="button">
+        </button>
+
+        <button class="embla__button embla__button--next" type="button">
+        </button>
+      </div>
+
+      <div class="embla__dots"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initEmbla } from "@/js/initEmbla";
+  initEmbla(); // Initialize the Embla carousel
+</script>
