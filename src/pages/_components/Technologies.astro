@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+const SERVICES_DATA = [
+  {
+    des: "Building powerful and scalable web applications using Microsoft’s .Net framework.",
+
+    id: 401,
+    icon: "/icons/dot-net.svg",
+  },
+  {
+    des: "Creating dynamic and interactive user interfaces with React, a popular JavaScript library..",
+    icon: "/icons/react.svg",
+    id: 402,
+  },
+  {
+    des: "Developing robust and maintainable web applications with Angular, a framework backed by Google.",
+    icon: "/icons/angular.svg",
+    id: 403,
+  },
+  {
+    des: "Building fast and scalable server-side applications using Node.js, a runtime built on Chrome's V8 JavaScript engine.",
+    icon: "/icons/nodejs.svg",
+    id: 403,
+  },
+  {
+    des: "Leveraging AI to enhance user experience and automate tasks with ChatGPT, an advanced language model.",
+    icon: "/icons/chatgpt.svg",
+    id: 406,
+  },
+];
+---
+
+<section id="technologies" class="bg-[#0D1525] py-10 xl:py-20 2xl:py-24">
+  <div class="container">
+    <div class="flex flex-col items-center gap-y-5">
+      <div class="max-w-[776px] lg:px-4 mx-auto">
+        <h2 class="oncode_title relative leading-[120%] lg:leading-[110%]">
+          Technologies <svg
+            class="absolute -top-12 -right-16"
+            xmlns="http://www.w3.org/2000/svg"
+            width="83"
+            height="102"
+            viewBox="0 0 83 102"
+            fill="none"
+          >
+            <path
+              d="M10.5751 16.8098C8.88695 16.978 7.80975 17.3818 7.07724 18.0482C6.05022 18.8915 6.0176 19.7845 6.78435 20.5972C13.3985 28.5368 16.9398 51.342 18.8168 59.5067C19.3041 61.4102 22.1728 61.7421 23.5459 59.6038C24.5911 56.9547 22.9654 33.2176 19.6975 25.4636C18.4068 22.429 16.5481 16.7829 10.5751 16.8098Z"
+              fill="#D92B2C"></path>
+            <path
+              d="M74.7931 81.145C74.7237 82.3722 74.471 83.1636 74.0237 83.7128C73.4602 84.4806 72.8334 84.5304 72.2395 83.9988C66.465 79.4408 50.3255 77.537 44.5298 76.4144C43.1772 76.1167 42.8609 74.0499 44.3246 72.9938C46.1574 72.1608 62.8968 72.6512 68.4442 74.7925C70.615 75.6386 74.6392 76.8208 74.7931 81.145Z"
+              fill="#D92B2C"></path>
+            <path
+              d="M57.4689 30.7372C58.8871 31.4727 59.7752 32.525 59.524 33.4094C56.432 46.0961 46.8763 56.7197 37.4334 65.0333C37.2343 65.2694 36.8735 65.4557 36.4497 65.5538C36.1068 65.6768 35.6442 65.6029 35.1891 65.3482C34.6933 65.0806 34.4296 64.7701 34.6001 64.4791C37.9001 57.9617 47.2097 25.4314 57.4689 30.7372Z"
+              fill="#D92B2C"></path>
+          </svg>
+        </h2>
+      </div>
+      <div class="max-w-[886px] mx-auto">
+        <p class="t oncode_des font-inter text-center">
+          We utilize the latest technologies to deliver top-notch solutions that
+          meet your business needs. Our expertise includes:
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container max-w-[1006px] pt-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        SERVICES_DATA.slice(0, 3).map((item, index) => (
+          <div class="bg-[#080F1D] items-center rounded-[11.5px] py-10 px-[38px] flex flex-col gap-y-6">
+            <div>
+              <Image src={item.icon} alt={item.des} width={85} height={85} />
+            </div>
+            <div class="space-y-3">
+              <h5 class="oncode_des text-sm text-center lg:text-base">
+                {item.des}
+              </h5>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-col lg:flex-row justify-center gap-8 mt-8">
+      {
+        SERVICES_DATA.slice(3).map((item, index) => (
+          <div class="bg-[#080F1D] lg:max-w-[312px] items-center rounded-[11.5px] py-10 px-[38px] flex flex-col gap-y-6">
+            <div>
+              <Image src={item.icon} alt={item.des} width={85} height={85} />
+            </div>
+            <div class="space-y-3">
+              <h5 class="oncode_des text-sm text-center lg:text-base">
+                {item.des}
+              </h5>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
