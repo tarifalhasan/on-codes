@@ -6,7 +6,10 @@ interface HeaderProps {}
 const MobileHeader: React.FC<HeaderProps> = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<string>("/");
-
+  const [isOpenSheet, setIsOpenSheet] = useState(false);
+  function handleisOpenSheet() {
+    setIsOpenSheet((prev) => false);
+  }
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -45,7 +48,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
 
         {/* Hamburger Icon for mobile */}
         <div className="lg:hidden">
-          <Sheet>
+          <Sheet open={isOpenSheet} onOpenChange={setIsOpenSheet}>
             <SheetTrigger asChild>
               <button
                 id="menu-button"
@@ -71,7 +74,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
             </SheetTrigger>
             <SheetContent>
               <ul className={`flex flex-col gap-y-2 pt-7`}>
-                <li>
+                <li onClick={() => setIsOpenSheet(false)}>
                   <a
                     href="/"
                     className={`text-lg   transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block  ${
@@ -83,7 +86,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
                     Home
                   </a>
                 </li>
-                <li>
+                <li onClick={() => setIsOpenSheet(false)}>
                   <a
                     href="#about"
                     className={`text-lg   transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline ${
@@ -95,7 +98,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
                     About
                   </a>
                 </li>
-                <li>
+                <li onClick={() => setIsOpenSheet(false)}>
                   <a
                     href="#services"
                     className={`text-lg   transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline ${
@@ -107,7 +110,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
                     Services
                   </a>
                 </li>
-                <li>
+                <li onClick={() => setIsOpenSheet(false)}>
                   <a
                     href="#technologies"
                     className={`text-lg   transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline ${
@@ -119,7 +122,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
                     Technologies
                   </a>
                 </li>
-                <li>
+                <li onClick={() => setIsOpenSheet(false)}>
                   <a
                     href="#contact"
                     className={`text-lg   transition-all duration-500 hover:text-[#D92B2C] px-4 py-2 lg:p-0 block lg:inline ${
