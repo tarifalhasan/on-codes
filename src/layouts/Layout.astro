@@ -2,8 +2,9 @@
 interface Props {
   title: string;
 }
-import Header from "@/components/Header.astro";
 
+import Header from "@/components/ui/Header";
+import MobileHeader from "@/components/ui/MobileHeader";
 import "../../styles/globals.css";
 import "../../styles/style.css";
 const { title } = Astro.props;
@@ -25,7 +26,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-[#080F1D] font-jakarta text-white">
-    <Header />
+    <Header client:load />
+    <MobileHeader client:load />
     <slot />
   </body>
 </html>
