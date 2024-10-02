@@ -31,6 +31,27 @@ const Header: React.FC<HeaderProps> = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          const yOffset = -100; // Offset to prevent the header from covering the title
+          const y =
+            element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   return (
     <header className="sticky hidden lg:block bg-[#080F1D] top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-4">
