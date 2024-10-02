@@ -7,9 +7,7 @@ const MobileHeader: React.FC<HeaderProps> = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<string>("/");
   const [isOpenSheet, setIsOpenSheet] = useState(false);
-  function handleisOpenSheet() {
-    setIsOpenSheet((prev) => false);
-  }
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
